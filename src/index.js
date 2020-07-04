@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import promise  from 'redux-promise-middleware';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/rootReducer';
@@ -14,7 +15,7 @@ import logger  from 'redux-logger';
 const store = createStore(
     rootReducer,
     composeWithDevTools(
-        applyMiddleware(thunk,logger)
+        applyMiddleware(promise,thunk,logger)
     )
 );
 
