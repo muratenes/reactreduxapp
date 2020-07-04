@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Link, Route} from "react-router-dom";
+import MoviesPage from "./components/pages/MoviesPage";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         >
           Learn React
         </a>
+
+        <Link to="movies">movies</Link>
+        <Route path='/movies' component={MoviesPage}></Route>
       </header>
     </div>
   );
